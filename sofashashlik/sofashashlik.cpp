@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
 using namespace std;
 
 
@@ -63,6 +65,28 @@ Sheep createSheep() {
     return sheep;
 }
 
+void file(Sheep* arrSheeps,int size){
+        FILE* file;
+        if ((file = fopen("D:\\sheepfile.txt", "w")) == NULL) {
+
+        }
+        else {
+            for (int i = 0; i < size; i++) {
+                fprintf(file, "%d", arrSheeps[i].weight);
+                fprintf(file, "%s", "\n");
+                fprintf(file, "%d", arrSheeps[i].weightWool);
+                fprintf(file, "%s", "\n");
+                
+            }
+        }
+        fclose(file);
+    }
+
+    void plan(Sheep* arrSheeps) {
+    
+    }
+
+
 
 int main()
 {
@@ -124,7 +148,7 @@ int main()
             }
             cout << endl << endl;
         }
-
+        file(arrSheeps, size);
     }
 
 
